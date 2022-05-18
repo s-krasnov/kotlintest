@@ -72,10 +72,13 @@ object SpringPetclinic_Build : BuildType({
 })
 
 object SpringPetclinic_HttpsGithubComSKrasnovSpringPetclinicRefsHeadsMain : GitVcsRoot({
-    name = "https://github.com/s-krasnov/spring-petclinic#refs/heads/main"
-    url = "https://github.com/s-krasnov/spring-petclinic"
+    name = "Spring Petclinic"
+    url = "git@github.com:s-krasnov/spring-petclinic.git"
     branch = "refs/heads/main"
     branchSpec = "refs/heads/*"
+    authMethod = uploadedKey {
+        uploadedKey = "mytestecdsa"
+    }
 })
 
 

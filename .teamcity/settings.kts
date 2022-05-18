@@ -46,7 +46,37 @@ project {
     }
 
     subProject(TestProject)
+    subProject(SpringPetclinic)
 }
+
+
+object SpringPetclinic : Project({
+    name = "Spring Petclinic"
+
+    vcsRoot(SpringPetclinic_HttpsGithubComSKrasnovSpringPetclinicRefsHeadsMain)
+
+    buildType(SpringPetclinic_Build)
+})
+
+object SpringPetclinic_Build : BuildType({
+    name = "Build"
+
+    vcs {
+        root(SpringPetclinic_HttpsGithubComSKrasnovSpringPetclinicRefsHeadsMain)
+    }
+
+    triggers {
+        vcs {
+        }
+    }
+})
+
+object SpringPetclinic_HttpsGithubComSKrasnovSpringPetclinicRefsHeadsMain : GitVcsRoot({
+    name = "https://github.com/s-krasnov/spring-petclinic#refs/heads/main"
+    url = "https://github.com/s-krasnov/spring-petclinic"
+    branch = "refs/heads/main"
+    branchSpec = "refs/heads/*"
+})
 
 
 object TestProject : Project({

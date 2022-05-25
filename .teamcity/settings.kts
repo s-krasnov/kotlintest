@@ -46,40 +46,8 @@ project {
     }
 
     subProject(TestProject)
-    subProject(SpringPetclinic)
+    subProject(TestVars)
 }
-
-
-object SpringPetclinic : Project({
-    name = "Spring Petclinic"
-
-    vcsRoot(SpringPetclinic_HttpsGithubComSKrasnovSpringPetclinicRefsHeadsMain)
-
-    buildType(SpringPetclinic_Build)
-})
-
-object SpringPetclinic_Build : BuildType({
-    name = "Build"
-
-    vcs {
-        root(SpringPetclinic_HttpsGithubComSKrasnovSpringPetclinicRefsHeadsMain)
-    }
-
-    triggers {
-        vcs {
-        }
-    }
-})
-
-object SpringPetclinic_HttpsGithubComSKrasnovSpringPetclinicRefsHeadsMain : GitVcsRoot({
-    name = "Spring Petclinic"
-    url = "git@github.com:s-krasnov/spring-petclinic.git"
-    branch = "refs/heads/main"
-    branchSpec = "refs/heads/*"
-    authMethod = uploadedKey {
-        uploadedKey = "mytestecdsa"
-    }
-})
 
 
 object TestProject : Project({
@@ -121,4 +89,9 @@ object TestProject_HttpsGithubComTimurbHttpPongGitRefsHeadsMaster : GitVcsRoot({
     url = "https://github.com/timurb/http-pong.git"
     branch = "refs/heads/master"
     branchSpec = "refs/heads/*"
+})
+
+
+object TestVars : Project({
+    name = "TestVars"
 })

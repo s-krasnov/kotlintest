@@ -99,6 +99,10 @@ object TestProject_HttpsGithubComTimurbHttpPongGitRefsHeadsMaster : GitVcsRoot({
 object TestVars : Project({
     name = "TestVars"
 
+    params {
+        param("env.TestParam", "credentialsJSON:d4fadc46-724e-435a-a79c-758800e85d08")
+    }
+
     subProject(TestVars_TestVarsSub1)
 })
 

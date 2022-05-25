@@ -32,7 +32,7 @@ project {
     description = "Contains all other projects"
 
     params {
-        param("env.TestParam", "Test1")
+        password("env.TestParam", "credentialsJSON:d1f3356a-dc0a-452c-8f0a-637238c0c65d")
     }
 
     features {

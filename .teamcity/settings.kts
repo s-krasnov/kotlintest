@@ -94,4 +94,11 @@ object TestProject_HttpsGithubComTimurbHttpPongGitRefsHeadsMaster : GitVcsRoot({
 
 object TestVars : Project({
     name = "TestVars"
+
+    subProject(TestVars_TestVarsSub1)
+})
+
+
+object TestVars_TestVarsSub1 : Project({
+    name = "TestVarsSub_1"
 })

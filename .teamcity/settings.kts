@@ -31,6 +31,10 @@ version = "2021.2"
 project {
     description = "Contains all other projects"
 
+    params {
+        param("env.TestParam", "Test1")
+    }
+
     features {
         buildReportTab {
             id = "PROJECT_EXT_1"
